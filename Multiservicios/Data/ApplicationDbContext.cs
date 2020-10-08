@@ -17,7 +17,9 @@ namespace Multiservicios.Data
         public DbSet<Departamento> Departamento { get; set; }
         public DbSet<AreaTrabajo> AreaTrabajo { get; set; }
         public DbSet<Puesto> Puesto { get; set; }
-
         public DbSet<Proveedor> Proveedor { get; set; }
+        public DbSet<Activo> Activo { get; set; }
+        public DbSet<Categoria> Categoria { get; set; }
+        public DbSet<Marca> Marca { get; set; }
     }
 }
