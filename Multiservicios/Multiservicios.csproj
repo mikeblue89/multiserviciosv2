@@ -8,6 +8,8 @@
   <ItemGroup>
     <Compile Remove="Data\Migrations\20201004212530_AddDepartamentoToDatabase.cs" />
     <Compile Remove="Data\Migrations\20201004212530_AddDepartamentoToDatabase.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201008055402_AddActivoToDatabase.cs" />
+    <Compile Remove="Data\Migrations\20201008055402_AddActivoToDatabase.Designer.cs" />
     <Compile Remove="Data\Migrations\20201008055423_AddCategoriaToDatabase.cs" />
     <Compile Remove="Data\Migrations\20201008055423_AddCategoriaToDatabase.Designer.cs" />
     <Compile Remove="Data\Migrations\20201008055439_AddMarcaToDatabase.cs" />
