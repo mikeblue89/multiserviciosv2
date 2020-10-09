@@ -10,8 +10,8 @@ using Multiservicios.Data;
 namespace Multiservicios.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201007015411_AddPuestoToDatabase")]
-    partial class AddPuestoToDatabase
+    [Migration("20201009041447_AddCategoriaToDatabase")]
+    partial class AddCategoriaToDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -245,6 +245,40 @@ namespace Multiservicios.Data.Migrations
                     b.ToTable("AreaTrabajo");
                 });
 
+            modelBuilder.Entity("Multiservicios.Models.Categoria", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Descripcion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Estado")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Fecha_Creacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Fecha_Modificacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Nombre_Categoria")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Usuario_Creacion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Usuario_Modificacion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categoria");
+                });
+
             modelBuilder.Entity("Multiservicios.Models.Departamento", b =>
                 {
                     b.Property<int>("Id")
@@ -262,6 +296,68 @@ namespace Multiservicios.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Departamento");
+                });
+
+            modelBuilder.Entity("Multiservicios.Models.Marca", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Estado")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Fecha_Creacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Fecha_Modificacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Nombre_Marca")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Tipo_Activo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Usuario_Creacion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Usuario_Modificacion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Marca");
+                });
+
+            modelBuilder.Entity("Multiservicios.Models.Proveedor", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CorreoContacto")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Estado")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NombreContacto")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NombreProveedor")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TelefonoContacto")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Proveedor");
                 });
 
             modelBuilder.Entity("Multiservicios.Models.Puesto", b =>

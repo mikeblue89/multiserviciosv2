@@ -8,12 +8,24 @@
   <ItemGroup>
     <Compile Remove="Data\Migrations\20201004212530_AddDepartamentoToDatabase.cs" />
     <Compile Remove="Data\Migrations\20201004212530_AddDepartamentoToDatabase.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201006050130_AddDepartamentoToDatabase.cs" />
+    <Compile Remove="Data\Migrations\20201006050130_AddDepartamentoToDatabase.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201006213653_AddAreaTrabajoToDatabase.cs" />
+    <Compile Remove="Data\Migrations\20201006213653_AddAreaTrabajoToDatabase.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201007015411_AddPuestoToDatabase.cs" />
+    <Compile Remove="Data\Migrations\20201007015411_AddPuestoToDatabase.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201008034804_AddProveedorToDatabase.cs" />
+    <Compile Remove="Data\Migrations\20201008034804_AddProveedorToDatabase.Designer.cs" />
     <Compile Remove="Data\Migrations\20201008055402_AddActivoToDatabase.cs" />
     <Compile Remove="Data\Migrations\20201008055402_AddActivoToDatabase.Designer.cs" />
     <Compile Remove="Data\Migrations\20201008055423_AddCategoriaToDatabase.cs" />
     <Compile Remove="Data\Migrations\20201008055423_AddCategoriaToDatabase.Designer.cs" />
     <Compile Remove="Data\Migrations\20201008055439_AddMarcaToDatabase.cs" />
     <Compile Remove="Data\Migrations\20201008055439_AddMarcaToDatabase.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201009040434_AddCategoriaToDatabase.cs" />
+    <Compile Remove="Data\Migrations\20201009040434_AddCategoriaToDatabase.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201009040457_AddMarcaToDatabase.cs" />
+    <Compile Remove="Data\Migrations\20201009040457_AddMarcaToDatabase.Designer.cs" />
   </ItemGroup>
 
 

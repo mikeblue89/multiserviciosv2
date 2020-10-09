@@ -10,8 +10,8 @@ using Multiservicios.Data;
 namespace Multiservicios.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201009040457_AddMarcaToDatabase")]
-    partial class AddMarcaToDatabase
+    [Migration("20201009041620_AddPuestoToDatabase")]
+    partial class AddPuestoToDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -3,31 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Multiservicios.Data.Migrations
 {
-    public partial class AddCategoriaToDatabase : Migration
+    public partial class AddDepartamentoToDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "AreaTrabajo",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Nombre = table.Column<string>(nullable: false),
-                    Descripcion = table.Column<string>(nullable: true),
-                    DepartamentoId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AreaTrabajo", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_AreaTrabajo_Departamento_DepartamentoId",
-                        column: x => x.DepartamentoId,
-                        principalTable: "Departamento",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
             migrationBuilder.CreateTable(
                 name: "Categoria",
                 columns: table => new
@@ -48,6 +27,20 @@ namespace Multiservicios.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Departamento",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(nullable: false),
+                    Descripcion = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Departamento", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Marca",
                 columns: table => new
                 {
@@ -64,6 +57,44 @@ namespace Multiservicios.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Marca", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Proveedor",
+                columns: table => new
+                {
+                    id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NombreProveedor = table.Column<string>(nullable: false),
+                    NombreContacto = table.Column<string>(nullable: true),
+                    CorreoContacto = table.Column<string>(nullable: true),
+                    TelefonoContacto = table.Column<string>(nullable: true),
+                    Estado = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Proveedor", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AreaTrabajo",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(nullable: false),
+                    Descripcion = table.Column<string>(nullable: true),
+                    DepartamentoId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AreaTrabajo", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AreaTrabajo_Departamento_DepartamentoId",
+                        column: x => x.DepartamentoId,
+                        principalTable: "Departamento",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -120,10 +151,16 @@ namespace Multiservicios.Data.Migrations
                 name: "Marca");
 
             migrationBuilder.DropTable(
+                name: "Proveedor");
+
+            migrationBuilder.DropTable(
                 name: "Puesto");
 
             migrationBuilder.DropTable(
                 name: "AreaTrabajo");
+
+            migrationBuilder.DropTable(
+                name: "Departamento");
         }
     }
 }
